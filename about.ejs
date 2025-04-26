@@ -1,0 +1,62 @@
+<%-include("navbar.ejs")%>
+
+<% if(data.length==0){%>
+
+<div class="container shadow mt-5 p-4">
+    <h3>Add About Banner</h3>
+    <form action="/admin/save_about " method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <div class="col-md-6 mt-3">
+                Enter upload photo:
+                <input class="form-control" type="file" name="photo" id="">
+            </div>
+
+            <div class="col-md-6 mt-3 ">
+                Enter the Details:
+                <textarea class="editor form-control" name="details" id=""></textarea>
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Save About Section</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<% } %>
+
+
+<div class="container shadow mt-5 p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>List About Banner</h3>
+        </div>
+        <div class="col-md-12">
+            <table style="text-align: center;" class="table table-stripped">
+                <tr>
+                    <th>Action</th>
+                    <th>Details</th>
+                    <th>Photo</th>
+                </tr>
+
+                <% data.map(function(row){ %>
+
+                    <tr>
+                        <td>
+                            <a href="/admin/delete_about/<%-row.about_id%>">Delete</a>
+                            <a href="/admin/edit_about/<%-row.about_id%>">Edit</a>
+                        </td>
+                        <td><%-row.details%></td>
+                        <td>
+                            <img style="width:100px; height:100px;" src="/<%-row.photo%>" >
+                        </td>
+                    </tr>
+
+               <% }) %>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>

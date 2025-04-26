@@ -1,0 +1,32 @@
+<%-include("navbar.ejs")%>
+
+
+<div class="container shadow mt-5 p-4">
+    <h3>Edit About Banner</h3>
+    <form action="/admin/update_about " method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <div class="col-md-5 mt-3">
+                <input type="hidden" name="about_id" value="<%-data[0].about_id%>" id="">
+                Enter upload photo:
+                <input class="form-control" type="file" name="photo" id="">
+            </div>
+            <div class="col-md-1">
+                <img style="width:100%;" src="/<%-data[0].photo%>" alt="">
+            </div>
+
+            <div class="col-md-6 mt-3 ">
+                Enter the Details:
+                <textarea class="editor form-control"  name="details" id=""><%-data[0].details%></textarea>
+            </div>
+
+
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Edit About Section</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%-include("footer.ejs")%>

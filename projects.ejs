@@ -1,0 +1,35 @@
+<%-include("navbar.ejs")%>
+
+<div class="container shadow p-4 mt-4">
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <h3>Add New Project</h3>
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="project_name">Enter Project Name</label>
+        <input type="text" name="project_name" id="project_name" class="form-control">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="project_technologies">Enter Project Technologies</label>
+        <input type="text" name="project_technologies" id="project_technologies" class="form-control">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="project_features">Enter Project Features</label>
+        <input type="text" name="project_features" id="project_features" class="form-control">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="project_image">Upload Project Image</label>
+        <input type="file" name="project_image" id="project_image" class="form-control">
+      </div>
+  
+      <div class="col-md-12 mt-3">
+        <button type="submit" class="btn btn-primary">Submit Project</button>
+      </div>
+    </div>
+  </div>
+
+<%-include("footer.ejs")%>

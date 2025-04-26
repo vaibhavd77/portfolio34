@@ -1,0 +1,25 @@
+<%-include("navbar.ejs")%>
+
+<div class="container shadow mt-5 p-4">
+    <h3>Edit Skills</h3>
+    <form action="/admin/update_skills" method="post" >
+        <div class="row">
+            <div class="col-md-5 mt-3">
+                <input type="hidden" name="skill_id" value="<%-data[0].skill_id%>">
+                Enter Skill type:
+                <input class="form-control" type="text"  value="<%-data[0].skill_type%>" name="skills_type" id="">
+            </div>
+
+            <div class="col-md-5 mt-3">
+                Enter Technologies:
+                <input class="form-control" type="text" value="<%-data[0].technologies%>" name="technologies" id="">
+            </div>
+
+            <div class="col-md-2 mt-3 text-center">
+                <br>
+                <button class="btn btn-primary">Edit skills </button>
+            </div>
+        </div>
+    </form>
+
+<%-include("footer.ejs")%>

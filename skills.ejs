@@ -1,0 +1,55 @@
+<%-include("navbar.ejs")%>
+
+<div class="container shadow mt-5 p-4">
+    <h3>Add Skills</h3>
+    <form action="/admin/save_skills" method="post" >
+        <div class="row">
+            <div class="col-md-5 mt-3">
+                Enter Skill type:
+                <input class="form-control" type="text" name="skills_type" id="">
+            </div>
+
+            <div class="col-md-5 mt-3">
+                Enter Technologies:
+                <input class="form-control" type="text" name="technologies" id="">
+            </div>
+
+            <div class="col-md-2 mt-3 text-center">
+                <br>
+                <button class="btn btn-primary">Add skills </button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="container p-4 shadow mt-4">
+    <div class="row">
+        <h3>List Skills</h3>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Action</th>
+                <th>Sr.NO</th>
+                <th>Skills Type</th>
+                <th>Technologies</th>
+            </tr>
+           <% for(var i=0;i<data.length;i++) { %>
+
+            <tr>
+                <td>
+                    <a href="/admin/edit_skills/<%-data[i].skill_id%>">Edit</a>
+                    <a href="/admin/delete_skills/<%-data[i].skill_id%>">Delete</a>
+                </td>
+                <td><%-i+1%></td>
+                <td><%-data[i].skill_type%></td>
+                <td><%-data[i].technologies%></td>
+            </tr>
+
+           <% } %>
+        </table>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>
